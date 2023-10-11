@@ -100,6 +100,6 @@ df.set_index('date', inplace=True)
 
 df["sinal"] = "FICAR FORA"
 df["sinal"] = np.where((df["zscore_vol"]>0) & (df["hv"]<=20),"COMPRA",df["sinal"])
-df["sinal"] = np.where((df["zscore_vol"]<0) & (df["hv"]>=100),"VENDA",df["sinal"])
+df["sinal"] = np.where((df["zscore_vol"]<0) & (df["hv"]>=100),"COMPRA",df["sinal"])
 
 df[["open","high","low","close","sinal"]].tail(5)
